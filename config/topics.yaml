@@ -1,0 +1,137 @@
+topics:
+  - slug: workhours
+    display_name: Work Hours
+    category: Work & Career
+    description: Overwork, overtime, and struggling to maintain work-life balance.
+    phrase_hints:
+      - "I've been working too much lately."
+      - "I never have time for myself anymore."
+
+  - slug: badboss
+    display_name: Bad Boss
+    category: Work & Career
+    description: Feeling unsupported or mistreated by a manager or supervisor.
+    phrase_hints:
+      - "My boss never listens to my ideas."
+      - "I don't feel respected at work."
+
+  - slug: coworkers
+    display_name: Coworkers
+    category: Work & Career
+    description: Conflict, tension, or frustration with colleagues in the workplace.
+    phrase_hints:
+      - "One of my coworkers keeps getting on my nerves."
+      - "There's a lot of tension on my team right now."
+
+  - slug: friendship
+    display_name: Friendship
+    category: Relationships
+    description: A friendship that has changed, faded, or feels one-sided.
+    phrase_hints:
+      - "I feel like my friend doesn't make time for me anymore."
+      - "Things have felt distant between us lately."
+
+  - slug: burnout
+    display_name: Burnout
+    category: Identity & Feelings
+    description: Exhaustion, low motivation, and feeling emotionally empty.
+    phrase_hints:
+      - "I don't have energy for anything anymore."
+      - "I feel completely drained."
+
+  - slug: laws
+    display_name: Laws & Regulations
+    category: Government
+    description: Frustration with government laws, regulations, or bureaucracy.
+    phrase_hints:
+      - "I don't understand why this rule even exists."
+      - "The system makes everything so complicated."
+
+  - slug: prices
+    display_name: High Prices & Inflation
+    category: Economy
+    description: Frustration with rising costs and the impact of inflation on daily life.
+    phrase_hints:
+      - "Everything is so expensive these days."
+      - "My salary doesn't go as far as it used to."
+
+  - slug: stocks
+    display_name: Stock & Asset Trading
+    category: Economy
+    description: Stress or excitement related to investing, trading, or asset performance.
+    phrase_hints:
+      - "I lost money on a trade I thought was safe."
+      - "I can't stop checking the market."
+
+  - slug: restaurants
+    display_name: Restaurants, Cafes & Bars
+    category: Everyday Frustrations
+    description: Bad experiences or annoyances at restaurants, cafes, or bars.
+    phrase_hints:
+      - "The service was terrible and nobody seemed to care."
+      - "I waited forever and the food still wasn't good."
+
+  - slug: weather
+    display_name: Weather
+    category: Everyday Frustrations
+    description: Frustration with weather conditions affecting mood or daily life.
+    phrase_hints:
+      - "This heat is making everyone miserable."
+      - "I can't get anything done when it's this humid."
+
+  - slug: general
+    display_name: General
+    category: Everyday Frustrations
+    description: No specific topic — general life frustration or venting.
+    phrase_hints:
+      - "There's just a lot on my mind lately."
+      - "I don't even know where to start."
+
+  - slug: familyexpectations
+    display_name: Family Expectations
+    category: Family Expectations
+    description: Pressure from parents or extended family over life choices, milestones, marriage, or comparison to relatives.
+    phrase_hints:
+      - "My parents don't understand why I want to do this."
+      - "Everyone keeps asking when I'm going to get married."
+
+  - slug: health
+    display_name: Health & Body
+    category: Health & Body
+    description: Worries about physical health, sleep, diet, appearance, or maintaining fitness.
+    phrase_hints:
+      - "I haven't been sleeping well at all."
+      - "I know I should take better care of myself, but it's hard."
+
+  - slug: housing
+    display_name: Housing
+    category: Housing
+    description: Stress related to finding, affording, or living in an apartment — deposits, roommates, or noisy neighbors.
+    phrase_hints:
+      - "Finding a decent place to live is so stressful."
+      - "My neighbors are so loud, and I don't know what to do."
+
+  - slug: military
+    display_name: Military Service
+    category: Military Service
+    description: Anxiety or frustration related to mandatory military service — timing, experience, or re-adjustment afterward.
+    phrase_hints:
+      - "I don't know when I should go, and it's stressing me out."
+      - "Getting back into normal life after service has been harder than I thought."
+
+  - slug: exams
+    display_name: Education & Exams
+    category: Education & Exams
+    description: Stress related to exams, grades, graduate school decisions, or competitive academic pressure.
+    phrase_hints:
+      - "I've been so stressed about this exam, I can't think about anything else."
+      - "I feel like I'm constantly being compared to other students."
+
+  - slug: nunchi
+    display_name: Nunchi (눈치)
+    category: Social Pressure
+    description: The pressure of constantly reading social cues, sensing others' moods, and adjusting behavior accordingly.
+    phrase_hints:
+      - "I'm always trying to figure out what everyone else is thinking."
+      - "It's exhausting to constantly read the room like that."
+

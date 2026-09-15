@@ -1,0 +1,41 @@
+empathy:
+  - "That sounds really frustrating."
+  - "I can only imagine how that feels."
+  - "That must be so hard to deal with."
+  - "I completely understand why you feel that way."
+  - "It makes sense that you'd feel this way."
+
+hedged_advice:
+  - "You might want to consider..."
+  - "Have you thought about...?"
+  - "It might help to..."
+  - "One option could be to..."
+  - "Maybe it's worth trying..."
+
+strong_advice:
+  - "Honestly, I think you should..."
+  - "If I were you, I'd..."
+  - "You really need to..."
+  - "My advice would be to..."
+  - "I'd strongly recommend that you..."
+
+pushback:
+  - "I see it a little differently."
+  - "I'm not sure I fully agree with that."
+  - "Can I offer another perspective?"
+  - "I understand, but have you considered the other side?"
+  - "I'd push back on that a little."
+
+agreement:
+  - "Absolutely."
+  - "I hear you on that."
+  - "That's so true."
+  - "I couldn't agree more."
+  - "Exactly, that makes total sense."
+
+exclamation:
+  - "My word!"
+  - "Oh hell."
+  - "Wow, seriously?"
+  - "No way!"
+  - "That's wild."

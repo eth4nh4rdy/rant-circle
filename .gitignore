@@ -1,0 +1,17 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Output files
+output/*.docx
+!output/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
