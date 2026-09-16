@@ -9,8 +9,7 @@ __pycache__/
 venv/
 
 # Output files
-output/*.docx
-!output/.gitkeep
+output/
 
 # OS
 .DS_Store
