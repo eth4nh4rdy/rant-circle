@@ -39,3 +39,15 @@ exclamation:
   - "Wow, seriously?"
   - "No way!"
   - "That's wild."
+
+checkin_questions:
+  - "How are you feeling right now, in one word?"
+  - "What's on your mind today?"
+  - "What's one good thing that happened to you this week?"
+  - "On a scale of 1 to 10, how's your energy today?"
+  - "What kind of mood did you wake up in today?"
+  - "What's one word to describe your week so far?"
+  - "Is there anything you're looking forward to today?"
+  - "What's something small that's been bothering you lately?"
+  - "How full is your cup today — empty, half full, or overflowing?"
+  - "What do you need most right now: to vent, to relax, or to be distracted?"

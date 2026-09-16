@@ -1,5 +1,7 @@
+import random
 from datetime import datetime
 
+import yaml
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
@@ -59,6 +61,28 @@ def add_header(document, name_field=True, date=None, topic=None):
     topic_run.font.color.rgb = BLACK
 
 
+def add_page1_content(document, topic_slug=None):
+    with open("config/phrases.yaml", "r") as f:
+        phrases = yaml.safe_load(f)
+    checkin_question = random.choice(phrases["checkin_questions"])
+
+    checkin_paragraph = document.add_paragraph()
+    label_run = checkin_paragraph.add_run("Warm-Up: ")
+    label_run.font.bold = True
+    label_run.font.color.rgb = SPACE_INDIGO
+    question_run = checkin_paragraph.add_run(checkin_question)
+    question_run.font.color.rgb = BLACK
+
+    for placeholder in (
+        "[Topic-primer question 1 — generated in Phase 3]",
+        "[Topic-primer question 2 — generated in Phase 3]",
+    ):
+        placeholder_paragraph = document.add_paragraph()
+        placeholder_run = placeholder_paragraph.add_run(placeholder)
+        placeholder_run.font.color.rgb = BLACK
+        placeholder_run.font.italic = True
+
+
 def add_footer(document):
     footer = document.sections[0].footer
     footer_paragraph = footer.paragraphs[0]
@@ -108,6 +132,7 @@ if __name__ == "__main__":
     document = create_document()
     add_footer(document)
     add_header(document, name_field=True, date="2026-09-16", topic="Work Hours")
+    add_page1_content(document, topic_slug="workhours")
     document.add_paragraph("This is a test of the document skeleton.")
     add_section_divider(document, text="Test Divider")
     document.save("output/skeleton_test.docx")
