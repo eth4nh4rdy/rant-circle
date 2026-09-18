@@ -51,9 +51,10 @@ def add_header(document, name_field=True, date=None, topic=None):
 
     date_paragraph = document.add_paragraph()
     if date:
-        formatted_date = datetime.strptime(date, "%Y-%m-%d").strftime("%B %-d, %Y")
+        dt = datetime.strptime(date, "%Y-%m-%d")
     else:
-        formatted_date = datetime.today().strftime("%B %-d, %Y")
+        dt = datetime.today()
+    formatted_date = dt.strftime("%B %d, %Y").replace(" 0", " ")
     date_run = date_paragraph.add_run(f"Date: {formatted_date}")
     date_run.font.color.rgb = BLACK
 
@@ -63,7 +64,7 @@ def add_header(document, name_field=True, date=None, topic=None):
 
 
 def add_page1_content(document, topic_slug=None):
-    with open("config/phrases.yaml", "r") as f:
+    with open("config/phrases.yaml", "r", encoding="utf-8") as f:
         phrases = yaml.safe_load(f)
     checkin_question = random.choice(phrases["checkin_questions"])
 
@@ -89,7 +90,7 @@ def add_footer(document):
     footer_paragraph = footer.paragraphs[0]
     footer_paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
     footer_run = footer_paragraph.add_run("www.primo-english.xyz")
-    footer_run.font.size = Pt(9)
+    footer_run.font.size = Pt(10)
     footer_run.font.color.rgb = GREY
 
     page_number_paragraph = footer.add_paragraph()
@@ -130,6 +131,7 @@ def add_section_divider(document, text=None):
         label_run.font.color.rgb = SPACE_INDIGO
 
     divider_paragraph = document.add_paragraph()
+    divider_paragraph.add_run(" ")  # non-breaking space gives the paragraph measurable height
     _set_paragraph_bottom_border(divider_paragraph)
 
 
@@ -191,13 +193,37 @@ def add_speaker_prep_sheet(document):
         _set_paragraph_bottom_border(blank_paragraph, color_hex="000000")
 
 
+def add_listener_notes(document, ranters):
+    for i in range(ranters):
+        document.add_page_break()
+
+        title_text = "Time to Serve Up Some Advice" if i == 0 else "Time to Dish Up More Advice"
+        title_paragraph = document.add_paragraph()
+        title_run = title_paragraph.add_run(title_text)
+        title_run.font.size = Pt(26)
+        title_run.font.bold = True
+        title_run.font.color.rgb = SPACE_INDIGO
+
+        _add_open_prompt(document, "Speaker name:", blank_lines=1)
+        _add_open_prompt(document, "Topic:", blank_lines=1)
+        _add_open_prompt(document, "Notes:", blank_lines=3)
+        _add_open_prompt(document, "Follow-up questions:", blank_lines=3)
+        _add_open_prompt(
+            document,
+            "My advice:",
+            blank_lines=3,
+        )
+        _add_open_prompt(
+            document, "One thing they said that resonated with me:", blank_lines=2
+        )
+
+
 if __name__ == "__main__":
     document = create_document()
     add_footer(document)
     add_header(document, name_field=True, date="2026-09-16", topic="Work Hours")
     add_page1_content(document, topic_slug="workhours")
-    document.add_paragraph("This is a test of the document skeleton.")
-    add_section_divider(document, text="Test Divider")
     add_speaker_prep_sheet(document)
+    add_listener_notes(document, ranters=3)
     document.save("output/skeleton_test.docx")
     print("Saved output/skeleton_test.docx")
