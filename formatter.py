@@ -218,6 +218,47 @@ def add_listener_notes(document, ranters):
         )
 
 
+def add_post_class_reflection(document, ranters, date=None):
+    document.add_page_break()
+
+    title_paragraph = document.add_paragraph()
+    title_run = title_paragraph.add_run("Save Room for Dessert")
+    title_run.font.size = Pt(26)
+    title_run.font.bold = True
+    title_run.font.color.rgb = SPACE_INDIGO
+
+    date_paragraph = document.add_paragraph()
+    if date:
+        dt = datetime.strptime(date, "%Y-%m-%d")
+    else:
+        dt = datetime.today()
+    formatted_date = dt.strftime("%B %d, %Y").replace(" 0", " ")
+    date_run = date_paragraph.add_run(f"Date: {formatted_date}")
+    date_run.font.color.rgb = BLACK
+
+    _add_open_prompt(document, "Advice I appreciated today:", blank_lines=0)
+
+    for _ in range(ranters):
+        from_paragraph = document.add_paragraph()
+        from_run = from_paragraph.add_run("From: _____________")
+        from_run.font.color.rgb = BLACK
+        for _ in range(2):
+            document.add_paragraph()
+
+    _add_open_prompt(
+        document, "A phrase or word I used today that I'm proud of:", blank_lines=1
+    )
+    _add_open_prompt(
+        document, "A phrase or word I heard that I want to use again:", blank_lines=1
+    )
+    _add_open_prompt(document, "Something I want to say better next time:", blank_lines=1)
+    _add_open_prompt(
+        document,
+        "My topic for next session (if I want to go again):",
+        blank_lines=1,
+    )
+
+
 if __name__ == "__main__":
     document = create_document()
     add_footer(document)
@@ -225,5 +266,6 @@ if __name__ == "__main__":
     add_page1_content(document, topic_slug="workhours")
     add_speaker_prep_sheet(document)
     add_listener_notes(document, ranters=3)
+    add_post_class_reflection(document, ranters=3, date="2026-09-16")
     document.save("output/skeleton_test.docx")
     print("Saved output/skeleton_test.docx")
