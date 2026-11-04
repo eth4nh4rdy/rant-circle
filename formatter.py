@@ -257,15 +257,3 @@ def add_post_class_reflection(document, ranters, date=None):
         "My topic for next session (if I want to go again):",
         blank_lines=1,
     )
-
-
-if __name__ == "__main__":
-    document = create_document()
-    add_footer(document)
-    add_header(document, name_field=True, date="2026-09-16", topic="Work Hours")
-    add_page1_content(document, topic_slug="workhours")
-    add_speaker_prep_sheet(document)
-    add_listener_notes(document, ranters=3)
-    add_post_class_reflection(document, ranters=3, date="2026-09-16")
-    document.save("output/skeleton_test.docx")
-    print("Saved output/skeleton_test.docx")
